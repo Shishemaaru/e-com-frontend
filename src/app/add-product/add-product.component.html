@@ -1,0 +1,42 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title class="text-center">ADD PRODUCT</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <form [formGroup]="productform" (submit)="userSubmit(productform.value)" >
+                    <mat-form-field appearance="fill">
+                        <mat-label>PRODUCT NAME:</mat-label>
+                        <input matInput placeholder="Device Name" formControlName="prodname">
+                      </mat-form-field>
+                      <br>
+
+                      <mat-form-field appearance="fill">
+                        <mat-label>PRODUCE CATEGORY:</mat-label>
+                        <input matInput formControlName="prodcat">
+                      </mat-form-field>
+                      <br>
+
+                      <mat-form-field appearance="fill">
+                        <mat-label>PRODUCT PRICE:</mat-label>
+                        <input matInput placeholder="Rs." formControlName="prodprice">
+                      </mat-form-field>
+                      <br>
+
+                      <button class="mt-4 btn btn-block" mat-raised-button color="primary">Submit</button>
+                    </form>
+
+                </mat-card-content>
+            </mat-card>
+            
+        </div>
+    </div>
+</div>
+
+<input type="file" (change)="onFileChnage($event)">
+<img [src]="imgURL" *ngIf="imgURL">
+
+
+                    
