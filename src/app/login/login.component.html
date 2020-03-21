@@ -11,14 +11,14 @@
                         <mat-label>User Name</mat-label>
                         <input matInput placeholder="Johnny Sin" formControlName="username">
                         <mat-icon matSuffix>account_circle</mat-icon>
-                        <mat-error *ngIf ="submitted && returnControls().name.errors">User Name is required</mat-error>
+                        <mat-error *ngIf ="submitted && returnControls('username').errors">User Name is required</mat-error>
                     </mat-form-field>
     
                     <mat-form-field appearance="outline" class="col-md">
                         <mat-label>Password</mat-label>
                         <input matInput placeholder="*****" formControlName="password" type="password">
                         <mat-icon matSuffix>lock</mat-icon>
-                        <mat-error *ngIf ="submitted && returnControls().name.errors">Password is required</mat-error>
+                        <mat-error *ngIf ="submitted && returnControls('password').errors">Password is required</mat-error>
                     </mat-form-field>
 
                     <button class="mt-4 btn-block" mat-raised-button color="primary">Submit</button>

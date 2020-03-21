@@ -12,8 +12,8 @@ export class ProductService {
   addproductdetail(formdata){
     return this.http.post(this.url+'/add', formdata);
   }
-  getallproducst(){
-    return this.http.get(this.url+'getall');
+  getallproducts(){
+    return this.http.get(this.url+'/getall');
   }
   uploadImage(file){
     return this.http.post(this.url+'/addimg',file)

@@ -16,6 +16,7 @@ import { MatFormFieldModule, MatIconModule, MatInputModule, MatButtonModule, Mat
 import { BrowseComponent } from './browse/browse.component';
 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { ManagerUserComponent } from './manager-user/manager-user.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     HeaderComponent,
     AddProductComponent,
     LoginComponent,
-    BrowseComponent
+    BrowseComponent,
+    ManagerUserComponent
   ],
   imports: [
     BrowserModule,

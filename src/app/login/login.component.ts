@@ -10,6 +10,7 @@ import { AuthService } from '../auth.service';
 export class LoginComponent implements OnInit {
 
   loginform;
+  submitted = false;
   constructor(private formbuilder: FormBuilder, private authservice: AuthService) { }
 
   ngOnInit() {
@@ -24,8 +25,13 @@ export class LoginComponent implements OnInit {
   }
 
   loginsubmit(formdata){
+    this.submitted = true;
     this.authservice.login(formdata);
     console.log(formdata)
+  }
+
+  returnControls(name){
+    return this.loginform.controls[name];
   }
 
 }
