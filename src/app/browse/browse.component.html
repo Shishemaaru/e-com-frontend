@@ -6,20 +6,20 @@
                 
             </div>
             <div class="browse-area">
-                <div class="item" *ngFor="let prod of all_products"> 
-                    <mat-card>
+                <div class="item" *ngFor="let prod of all_products" [routerLink]="['/details', prod._id]" routerLinkActive="router-link-active" > 
+                    <mat-card class="mt-5">
                         <mat-card-content class="card-body">
                             <div class="row">
                                 <div class="col-md-6">
-                                <p class="h3">{{prod.productname}}</p>
-                                <p class="h6 text-muted">in {{prod.category}}</p>
+                                <p class="h3">{{prod.prodname}}</p>
+                                <p class="h6 text-muted">in {{prod.prodcat}}</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <img src="http://localhost:3000/products/{{prod.image}}">
+                                    <img src="http://localhost:3000/{{prod.image}}">
                                 </div>
                             </div>
                             
-                            {{prod.price}}
+                            {{prod.prodprice}}
                             
                         </mat-card-content>
                     </mat-card>

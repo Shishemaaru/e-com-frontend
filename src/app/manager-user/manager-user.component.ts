@@ -3,10 +3,10 @@ import { FormBuilder } from '@angular/forms';
 import { UserService } from '../user.service';
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './manage-user.component.html',
-  styleUrls: ['./manage-user.component.css']
-})
+  selector: 'app-manage-user',
+  templateUrl: './manager-user.component.html',
+  styleUrls: ['./manager-user.component.css']
+}) 
 export class ManagerUserComponent implements OnInit {
 
   editForm;
@@ -14,12 +14,19 @@ export class ManagerUserComponent implements OnInit {
   users;
   currentUser: any;
   showEditForm = false;
+  showAddForm = false;
   
   constructor(private formBuilder: FormBuilder, private userService: UserService) { }
 
   ngOnInit() {
 
-    
+    this.userForm = this.formBuilder.group({
+      name : '',
+      username: '',
+      password: '',
+      email: '',
+      contact: '',
+    })
     this.getData();
   }
 
@@ -60,8 +67,8 @@ export class ManagerUserComponent implements OnInit {
     this.showEditForm = true;
   }
 
-  onSubmit(){
-    
+  onSubmit(formdata){
+    console.log(formdata);
   }
 
 }

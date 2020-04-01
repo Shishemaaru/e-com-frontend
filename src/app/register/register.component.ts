@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
 import swal from 'sweetalert2';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -10,12 +11,13 @@ import swal from 'sweetalert2';
 export class RegisterComponent implements OnInit {
   
   userform;
-  submitted=false
-  constructor(private formBuilder: FormBuilder, private userService: UserService) { }
+  submitted=false;
+  hide=true;
+  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) { }
   
 
   ngOnInit() {
-    document.body.classList.add('bg-rg')
+    // document.body.classList.add('bg-rg')
     this.userform= this.formBuilder.group({
       name : ["", [Validators.required, Validators.maxLength(20)]],
       username : ["", Validators.required],
@@ -49,9 +51,8 @@ export class RegisterComponent implements OnInit {
     
     this.userService.addUser(formdata).subscribe(response=> {
       console.log(response);
-      this.userform.reset();
-      this.submitted = false;
-    });
+      this.router.navigate(['/home'])   
+     });
 
   }
   returnControls(){

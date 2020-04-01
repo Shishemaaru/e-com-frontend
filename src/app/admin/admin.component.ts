@@ -8,7 +8,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-    ngOnInit(): void {
-        throw new Error("Method not implemented.");
-    }
+  ngOnInit() {
+  }
+    
 }

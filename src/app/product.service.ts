@@ -18,4 +18,13 @@ export class ProductService {
   uploadImage(file){
     return this.http.post(this.url+'/addimg',file)
   }
+  fetchReviewsbyProduct(id){
+  return this.http.get(`http://localhost:3000/review/getreviews/${id}`)
+  }
+  addReview(data){
+    return this.http.post( 'http://localhost:3000/review/add', data)
+  }
+  getProductById(id){
+    return this.http.get(this.url+`/getbyid/${id}`)
+  }
 }

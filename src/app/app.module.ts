@@ -17,6 +17,14 @@ import { BrowseComponent } from './browse/browse.component';
 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { ManagerUserComponent } from './manager-user/manager-user.component';
+import { ReviewComponent } from './review/review.component';
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgxStarRatingModule } from 'ngx-star-rating';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HomeComponent } from './home/home.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +35,11 @@ import { ManagerUserComponent } from './manager-user/manager-user.component';
     AddProductComponent,
     LoginComponent,
     BrowseComponent,
-    ManagerUserComponent
+    ManagerUserComponent,
+    ReviewComponent,
+    ProductDetailsComponent,
+    HomeComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +53,10 @@ import { ManagerUserComponent } from './manager-user/manager-user.component';
     MatInputModule, 
     MatButtonModule, 
     MatCardModule,
-    SweetAlert2Module
+    SweetAlert2Module,
+    NgbModule,
+    NgxStarRatingModule,
+    FontAwesomeModule
 
   ],
   providers: [],

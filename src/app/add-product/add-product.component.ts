@@ -3,6 +3,8 @@ import { FormBuilder} from '@angular/forms';
 import { UserService } from '../user.service';
 import { ProductService } from '../product.service';
 
+import { faBoxOpen, faRupeeSign, faTrashAlt, faDice } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
@@ -14,6 +16,13 @@ export class AddProductComponent implements OnInit {
   selectedFile;
   imgURL;
   message;
+  description = [];
+
+  delete = faTrashAlt;
+  box = faBoxOpen;
+  dice = faDice;
+  money = faRupeeSign;
+
   constructor(private fb: FormBuilder, private productService: ProductService ) { }
 
   ngOnInit() {
@@ -28,11 +37,20 @@ export class AddProductComponent implements OnInit {
     this.productform=this.fb.group({
       prodname : '',
       prodcat : '',
-      prodprice : ''
+      prodprice : '',
+      image : ''
     })
   }
 
+ 
+   
   userSubmit(formdata){
+    if(this.productform.invalid){
+      alert('invalid form')
+      return;
+    }
+    formdata.description = this.description;
+    formdata.image = this.prodImg
     console.log(formdata)
     this.productService.addproductdetail(formdata).subscribe((response) => {
       console.log(response);
@@ -48,6 +66,15 @@ export class AddProductComponent implements OnInit {
     this.productService.uploadImage(formdata).subscribe(response=>{
       console.log(response);
     });
+  }
+
+  addDescription(){
+    this.description.push(['', '']);
+    console.log(this.description);
+  }
+
+  removeDescription(index){
+    this.description.splice(index, 1);
   }
 
   preview(files){
@@ -69,6 +96,8 @@ export class AddProductComponent implements OnInit {
 
 }
 
-
+getControl(){
+  return this.productform.controls;
+}
 
 }
