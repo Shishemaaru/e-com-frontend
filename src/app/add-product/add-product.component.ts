@@ -12,11 +12,15 @@ import { faBoxOpen, faRupeeSign, faTrashAlt, faDice } from '@fortawesome/free-so
 })
 export class AddProductComponent implements OnInit {
   productform;
-  prodImg;
-  selectedFile;
+  detailsForm;
+  prodImgs = [];
+  descImgs=[];
+  // selectedFile;
   imgURL;
   message;
   description = [];
+  // details =[];
+ 
 
   delete = faTrashAlt;
   box = faBoxOpen;
@@ -38,10 +42,19 @@ export class AddProductComponent implements OnInit {
       prodname : '',
       prodcat : '',
       prodprice : '',
-      image : ''
+      // proddesc: '',
+      prodbrand : '',
+      image : '',
+    })
+    this.detailsForm=this.fb.group({
+      head1 : '',
+      head2 : '',
+      desc1 : '',
+      desc2 : '',
     })
   }
 
+  
  
    
   userSubmit(formdata){
@@ -50,7 +63,9 @@ export class AddProductComponent implements OnInit {
       return;
     }
     formdata.description = this.description;
-    formdata.image = this.prodImg
+    formdata.images = this.prodImgs
+    formdata.proddesc = this.detailsForm.value
+    formdata.descImgs = this.descImgs
     console.log(formdata)
     this.productService.addproductdetail(formdata).subscribe((response) => {
       console.log(response);
@@ -58,15 +73,28 @@ export class AddProductComponent implements OnInit {
   }
 
   onFileChange(event){
-    let formdata = new FormData();
-    this.selectedFile = event.target.files[0];
-    this.prodImg = this.selectedFile.name;
-    this.preview(event.target.files);
-    formdata.append('image', this.selectedFile, this.selectedFile.name);
+    let selectedFiles = [];
+    for(let file of event.target.files){
+      let formdata = new FormData();
+      this.prodImgs.push(file.name)
+      this.preview(event.target.files);
+    formdata.append('image', file, file.name);
     this.productService.uploadImage(formdata).subscribe(response=>{
       console.log(response);
     });
-  }
+  }}
+
+  onFileChange2(event){
+    let selectedFiles = [];
+    for(let file of event.target.files){
+      let formdata = new FormData();
+      this.descImgs.push(file.name)
+      this.preview(event.target.files);
+    formdata.append('image', file, file.name);
+    this.productService.uploadImage(formdata).subscribe(response=>{
+      console.log(response);
+    });
+  }}
 
   addDescription(){
     this.description.push(['', '']);
@@ -76,6 +104,12 @@ export class AddProductComponent implements OnInit {
   removeDescription(index){
     this.description.splice(index, 1);
   }
+
+  // addDetails(){
+  //   this.details.push(['']);
+  //   console.log(this.details);
+
+  // }
 
   preview(files){
     if(files.lenght===0)
@@ -91,7 +125,7 @@ export class AddProductComponent implements OnInit {
   reader.readAsDataURL(files[0]);
   reader.onload = (_event) =>{
     this.imgURL = reader.result;
-    // console.log(this.imgURL);
+    
   }
 
 }

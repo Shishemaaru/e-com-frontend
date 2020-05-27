@@ -1,0 +1,36 @@
+<mat-card>
+    <mat-card-content>
+        <mat-accordion>
+            <mat-expansion-panel *ngFor="let order of orders">
+                <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <p class="mx-auto">{{order.user.username}}</p>
+                </mat-panel-title>
+                <mat-panel-description>
+                    Booked {{order.created | date}}
+                </mat-panel-description>
+                
+                </mat-expansion-panel-header>
+                <p style="color: rgba(0, 0, 0, 0.678);">
+                        
+                  <mat-card style="margin-bottom: 1rem;" *ngFor="let product of order.cart">
+                      <h5>Product: {{product.data.prodname}}</h5>
+                      <h5>Quantity: {{product.quantity}}</h5>
+                      <h5>Price: {{product.data.prodprice}}</h5>
+                      <h5>{{order.user.name}}</h5>
+                      <h5>{{order.user.contact}}</h5>
+                      <div><h5 style="color: red;">Address: 
+                        <h5 style="color: rgb(0, 0, 0);">{{order.user.address[0].house}}</h5>
+                        <h5 style="color: rgb(0, 0, 0);">{{order.user.address[0].landmark}}</h5>
+                        <h5 style="color: rgb(0, 0, 0);">{{order.user.address[0].city}}</h5>
+                      </h5></div>
+                      <hr>
+
+                  </mat-card>
+                  </p> 
+                  <!-- <button mat-raised-button (click)="toggleForm(host)">Edit</button> -->
+            </mat-expansion-panel>
+        </mat-accordion>
+        
+    </mat-card-content>
+</mat-card>

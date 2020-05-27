@@ -1,0 +1,97 @@
+<div class="container-fluid">
+    <div class="row">
+         <div class="col-md-4">
+              <mat-card class="reg">
+                   <mat-card-content class="card-body">
+                        <p class="h2 text-center">Registrations till Date</p>
+                        <hr>
+                        <p class="display-4 text-center">{{users.length}}</p>
+                   </mat-card-content>
+              </mat-card>
+         </div>
+ 
+         <div class="col-md-4">
+              <mat-card class="reg">
+                   <mat-card-content class="card-body">
+                        <p class="h2 text-center">Orders Placed till Date</p>
+                        <hr>
+                        <p class="display-4 text-center">{{orders.length}}</p>
+                   </mat-card-content>
+              </mat-card>
+         </div>
+ 
+         <!-- <div class="col-md-4">
+              <mat-card class="reg">
+                   <mat-card-content class="card-body">
+                        <p class="h2 text-center">Total Locations</p>
+                        <hr>
+                        <p class="display-4 text-center">{{locs.length}}</p>
+                   </mat-card-content>
+              </mat-card>
+         </div> -->
+    </div>
+ 
+    <mat-card class="mt-5">
+         <mat-card-content>
+              <button style="margin-right: 20px;" mat-raised-button color="primary" (click)="viewUsers()">Registrations</button>
+              <button mat-raised-button color="primary" (click)="viewOrders()">Orders</button>
+              <div class="chart" id="regByDate" style="width: 50rem;height: 30rem;"></div>
+         </mat-card-content>
+    </mat-card>
+</div>
+
+
+
+<!-- 
+<mat-card class="card-content-top">
+     <mat-card-content class="card-body">
+
+     </mat-card-content>
+ </mat-card>
+ <div class="row">
+     <div class="col-md-4 mt-5">
+         <mat-card class="card-content">
+             <mat-card-content class="card-body">
+                 
+             </mat-card-content>
+         </mat-card>
+     </div>
+
+     <div class="col-md-8 mt-5">
+         <mat-card class="card-content">
+             <mat-card-content class="card-body">
+
+             </mat-card-content>
+         </mat-card>
+     </div>
+ </div>
+ <div class="row">
+     <div class="col-md-3 mt-5">
+         <mat-card class="card-content-mini">
+             <mat-card-content class="card-body">
+
+             </mat-card-content>
+         </mat-card>
+     </div>
+     <div class="col-md-3 mt-5">
+         <mat-card class="card-content-mini">
+             <mat-card-content class="card-body">
+
+             </mat-card-content>
+         </mat-card>
+     </div>
+     <div class="col-md-3 mt-5">
+         <mat-card class="card-content-mini">
+             <mat-card-content class="card-body">
+
+             </mat-card-content>
+         </mat-card>
+     </div>
+     <div class="col-md-3 mt-5">
+         <mat-card class="card-content-mini">
+             <mat-card-content class="card-body">
+
+             </mat-card-content>
+         </mat-card>
+     </div>
+ </div> -->

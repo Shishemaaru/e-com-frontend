@@ -1,0 +1,29 @@
+
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 sidebar text-center">
+            <img [src]=" 'http://localhost:3000/'+admin.image " class="rounded-circle" style="height: 100px;">
+            <h4>Hello, {{admin.name}}</h4>
+            <h4>{{admin.email}}</h4>
+            <hr>
+            <button mat-flat-button color="warn" (click)="toggleManageUser()" mat-button class="btn-block mt-3" >Manage Users</button>
+            <button mat-flat-button color="warn" (click)="toggleShowStats()" mat-button class="btn-block mt-3" >Website Stats</button>
+            <button mat-flat-button color="warn" (click)="toggleShowOrder()" mat-button class="btn-block mt-3" >Show Orders</button>
+
+        </div>
+        <div class="col-9 panel">
+            <div class="row justify-content-center">
+                <div class="col-11">
+                    <h1>Admin Dashboard</h1>
+                    <hr>
+                    <app-manage-user *ngIf="showmanageuser"></app-manage-user>
+                    <app-webstats [users]="users" [orders]="orders" *ngIf="showstats && users && orders"></app-webstats>
+                    <app-ordermanager *ngIf="showorders"></app-ordermanager>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

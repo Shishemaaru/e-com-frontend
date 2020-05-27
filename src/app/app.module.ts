@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_BOOTSTRAP_LISTENER } from '@angular/core';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
@@ -25,6 +25,29 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './home/home.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { ManagePasswordComponent } from './manage-password/manage-password.component';
+import { ManageAddressComponent } from './manage-address/manage-address.component';
+import { CartComponent } from './cart/cart.component';
+import { PaymentComponent } from './payment/payment.component';
+import { LogsignComponent } from './logsign/logsign.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { AppliancesComponent } from './appliances/appliances.component';
+import { AccessoriesComponent } from './accessories/accessories.component';
+import { WebstatsComponent } from './webstats/webstats.component';
+import { OrdermanagerComponent } from './ordermanager/ordermanager.component';
+import {MatExpansionModule} from '@angular/material';
+import {MatRippleModule} from '@angular/material/core';
+import { PhonesComponent } from './phones/phones.component';
+import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
+import { UserordersComponent } from './userorders/userorders.component';
+
+
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -39,7 +62,19 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     ReviewComponent,
     ProductDetailsComponent,
     HomeComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    AdminDashboardComponent,
+    ManagePasswordComponent,
+    ManageAddressComponent,
+    CartComponent,
+    PaymentComponent,
+    LogsignComponent,
+    AppliancesComponent,
+    AccessoriesComponent,
+    WebstatsComponent,
+    OrdermanagerComponent,
+    PhonesComponent,
+    UserordersComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,10 +91,17 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
     SweetAlert2Module,
     NgbModule,
     NgxStarRatingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatTabsModule,
+    MatExpansionModule,
+    MatRippleModule,
+    AnimateOnScrollModule,
+   
+ 
 
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

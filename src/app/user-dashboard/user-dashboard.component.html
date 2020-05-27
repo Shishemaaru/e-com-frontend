@@ -1,1 +1,81 @@
-<p>user-dashboard works!</p>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 sidebar text-center">
+            <img [src]=" 'http://localhost:3000/'+user.image " class="rounded-circle" style="height: 170px;width: 120px;">
+            <h4 style="padding: 1rem;">Hello, {{user.name}}</h4>
+            <h4>{{user.email}}</h4>
+            <hr>
+            <button mat-flat-button color="warn" mat-button class="btn-block mt-3" (click)="toggleuserdetails()">update profile</button><br>
+            <button mat-flat-button color="warn" mat-button class="btn-block mt-3" (click)="toggleManageAddress()">Manage Address</button><br>
+            <button mat-flat-button color="warn" mat-button class="btn-block mt-3" (click)="toggleManageOrders()">Manage Orders</button>
+        </div>
+        <div class="col-9 panel" style="background-image: linear-gradient(to top, rgb(96, 123, 151), rgb(250, 245, 245));">
+            <div class="row justify-content-center">
+                <div class="col-11">
+                  
+                    <mat-card class="col-md-11" *ngIf="showuserdetails" style="border-radius: 30px;"> 
+                       
+                        <p style="font-family: Canela;" class="display-4">Personal Details</p>
+                        <hr>
+    
+                        
+                        <mat-card-content class="card-body">
+                            <form [formGroup]="userform" (submit)="userSubmit(userform.value)">
+                                <mat-form-field appearance="outline" style="font-size: small;" class="col-md-10">
+                                      <mat-label>Name</mat-label>
+                                      <input matInput placeholder="Rohit Khanna" formControlName="name">
+                                      <mat-error *ngIf="returnControls().name.errors">Name is Required</mat-error>
+                                </mat-form-field>
+        
+                                <mat-form-field appearance="outline" style="font-size: small;" class="col-md-10">
+                                      <mat-label>Username</mat-label>
+                                      <input matInput placeholder="Rohit123" formControlName="username">
+                                      <mat-error *ngIf="returnControls().username.errors">Username is Required</mat-error>
+                                </mat-form-field>
+                                
+                                
+                                <mat-form-field appearance="outline" style="font-size: small;" class="col-md-10">
+                                      <mat-label>Email</mat-label>
+                                      <input matInput placeholder="Rohit@gmail.com" formControlName="email">
+                                      <mat-error *ngIf="returnControls().email.errors">Email is Required</mat-error>
+                                </mat-form-field>
+    
+                                <mat-form-field appearance="outline" style="font-size: small;" class="col-md-10">
+                                    <mat-label>Contact</mat-label>
+                                    <input matInput placeholder="91-9756483922" formControlName="contact">
+                                    <mat-error *ngIf="returnControls().contact.errors">Email is Required</mat-error>
+                              </mat-form-field>
+    
+                                <div class="col-md-10">
+                                      <button mat-raised-button color="warn" class="ml-auto mt-3">Update</button>
+                                </div>
+                          </form>
+    
+                        </mat-card-content>
+    
+                    </mat-card>
+
+                    <app-manage-address *ngIf="showmanageaddress"></app-manage-address>
+                    <app-ordermanager *ngIf="showorders"></app-ordermanager>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

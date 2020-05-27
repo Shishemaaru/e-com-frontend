@@ -1,1 +1,100 @@
-<p>home works!</p>
+
+
+    <header id="kuchbhi" class="masthead text-white text-center" style="background:url('http://a.top4top.net/p_397znzmu1.png')no-repeat center bottom; background-size:cover; background-attachment: fixed; height: 35rem;">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row justify-content-center ch-p">
+                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto" >
+                    <form>
+                        <div class="form-row">
+                            <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg ch-u" placeholder="Search"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+        <section class="features-icons bg-light text-center" >
+            <div class="container">
+                <div class="row" style="background-color: rgba(187, 184, 184, 0.397);">
+                    
+                    <div class="col-lg-4" style="border-right: 1px solid grey;" (click)="togglephones()" matRipple [class]="selected1?'selected':''">
+                        <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
+                            <div data-aos="zoom-out-right" data-aos-duration="1200"  class="features-icons-icon text-center"><fa-icon style="font-size: 5rem; color:rgb(163, 31, 31); background-attachment: fixed;" [icon]="mobile"></fa-icon></div>
+                            <h4>Phone</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" style="border-right: 1px solid grey;" (click)="toggleappl()" matRipple [class]="selected2?'selected':''">
+                        <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
+                            <div data-aos="zoom-out-down" data-aos-duration="1200"  class="features-icons-icon text-center"><fa-icon style="font-size: 5rem; color:rgb(163, 31, 31); background-attachment: fixed;" [icon]="tv"></fa-icon></div>
+                            <h4>Home Appliances</h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-4"  (click)="toggleacc()" matRipple [class]="selected3?'selected':''">
+                        <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
+                            <div data-aos="zoom-out-left" data-aos-duration="1200"  class="features-icons-icon text-center"><fa-icon style="font-size: 5rem; color:rgb(163, 31, 31); background-attachment: fixed;" [icon]="headph"></fa-icon></div>
+                            <h4>Accessories</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <app-appliances *ngIf="showappliance"></app-appliances>
+        <app-phones *ngIf="showmobile"></app-phones>
+        <app-accessories *ngIf="showacc"></app-accessories>
+    
+        <!-- <a class="gotopbtn" href="#kuchbhi"><i class="fa fa-arrow-circle-up"></i></a> -->
+        
+           
+        
+        <section class="testimonials text-center bg-light">
+            <div class="container">
+                
+            </div>
+        </section>
+        <section class="call-to-action text-white text-center" style="background:url(&quot;assets/homepage/img/bg-masthead.jpeg&quot;) no-repeat center center;background-size:cover;">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-9 mx-auto">
+                        <h2 class="mb-4">Subscribe, so you dont miss out on discounts!</h2>
+                    </div>
+                    <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                        <form>
+                            <div class="form-row">
+                                <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg" type="email" placeholder="Enter your email..."></div>
+                                <div mat-raised-button class="col-12 col-md-3"><button class="btn btn-primary btn-block btn-lg" color="warn" type="submit">Sign up!</button></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    <footer class="footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 my-auto h-100 text-center text-lg-left">
+                    <ul class="list-inline mb-2" >
+                        <li class="list-inline-item"><a style="color: rgb(243, 10, 10);" href="#">About</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a style="color: rgb(243, 10, 10);" href="#">Contact</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a style="color: rgb(243, 10, 10);" href="#">Terms of &nbsp;Use</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a style="color: rgb(243, 10, 10);" href="#">Privacy Policy</a></li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0">© Brand 2020. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 my-auto h-100 text-center text-lg-right">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a style="color: rgb(52, 90, 161);" href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a style="color: rgb(49, 100, 158);" href="#"><i class="fa fa-twitter fa-2x fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a style="color: rgb(163, 59, 129);" href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>

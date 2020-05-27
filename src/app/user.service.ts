@@ -6,8 +6,18 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class UserService {
+  loggedin=false;
   url= "http://localhost:3000/user"
-  constructor(private http: HttpClient, private router: Router) { }
+  
+  constructor(private http: HttpClient, private router: Router) { 
+    if(sessionStorage.getItem('user')){
+      this.loggedin=true;
+    }
+  }
+
+  changePassword(id,password){
+    return this.http.put(this.url+`/changepassword/${id}`, {password : password})
+  }
   
   addUser(formdata){
     let message = this.http.post(this.url+'/add', formdata);
@@ -25,8 +35,8 @@ export class UserService {
     return this.http.get(this.url+`/getbyid/${id}`);
   }
 
-  updateUser(user, id){
-    return this.http.put(this.url+`/update/${id}`, user);
+  updateUser(id, data){
+    return this.http.put(this.url+`/update/${id}`, data);
   }
 
   delete(id){
@@ -38,9 +48,24 @@ export class UserService {
   }
 
   logout(){
+    this.loggedin=false;
     sessionStorage.removeItem('user');
+    sessionStorage.removeItem('cart');
     sessionStorage.removeItem('admin');
-    this.router.navigate(['login']);
+    this.router.navigate(['/logsign']);
   }
+  getUserByEmail(email){
+    return this.http.get(this.url+'/getbyemail/'+email);
+  }
+
+  addAddress(id, data){
+    return this.http.put(this.url+`/addaddress/${id}`, data);
+  }
+
+  uploadImage(file){
+    return this.http.post(this.url+'/addimg',file)
+  }
+
+
 }
 

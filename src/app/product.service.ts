@@ -5,6 +5,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProductService {
+  lastSort;
+  category;
+  brand;
   url="http://localhost:3000/product"
 
   constructor(private http: HttpClient) {}

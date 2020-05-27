@@ -17,13 +17,16 @@ export class RegisterComponent implements OnInit {
   
 
   ngOnInit() {
-    // document.body.classList.add('bg-rg')
+    document.body.classList.add('bg-rg')
     this.userform= this.formBuilder.group({
       name : ["", [Validators.required, Validators.maxLength(20)]],
       username : ["", Validators.required],
       password : ["", [Validators.required, Validators.minLength(5)]],
       confirm : [""],
-      email : ["", Validators.required]
+      email : ["", Validators.required],
+      contact : [null, [Validators.required, Validators.minLength(10)]],
+      age : [null, Validators.required],
+      created : new Date,
     },{ validator : this.matchPassword('password', 'confirm')}
     )
   

@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark primary-color bg-dark">
-    <a class="navbar-brand" href="#">Electrify</a>
+<!-- <nav class="navbar navbar-expand-lg navbar-dark primary-color bg-dark">
+    <a class="navbar-brand" href="#">E-shop</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -10,7 +10,7 @@
           <a class="nav-link" [routerLink]="['/register']" routerLinkActive="router-link-active" >Register <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/admin']" routerLinkActive="router-link-active" >Admin</a>
+          <a class="nav-link" [routerLink]="['/admin-dashboard']" routerLinkActive="router-link-active" >Admin</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/product']" routerLinkActive="router-link-active" >Add Product</a>
@@ -18,9 +18,66 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/browse']" routerLinkActive="router-link-active">Browse</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/cart']" routerLinkActive="router-link-active">Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/logsign']" routerLinkActive="router-link-active">logsign</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/appliances']" routerLinkActive="router-link-active">appliances</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/accessories']" routerLinkActive="router-link-active">Accessories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="logout()">Logout</a>
+        </li>
         
 
 
       </ul>
     </div>
+  </nav> -->
+
+
+  <nav class="navbar navbar-expand-sm navbar-light bg-faded">
+    <a class="navbar-brand" href="#" [routerLink]="['/home']" routerLinkActive="router-link-active">Tech-Buy</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" style="font-size: large;" [routerLink]="['/home']" routerLinkActive="router-link-active"><i class="fa fa-home" aria-hidden="true"></i> <span class="sr-only">(current)</span></a>
+        </li>
+        <li *ngIf="!userservice.loggedin" class="nav-item">
+          <a class="nav-link" [routerLink]="['/logsign']" routerLinkActive="router-link-active">Login</a>
+        </li>
+        <li *ngIf="userservice.loggedin" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Account
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['/user-dashboard']" routerLinkActive="router-link-active">Dashboard</a>
+            <a class="dropdown-item" [routerLink]="['/cart']" routerLinkActive="router-link-active">Your Cart</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="logout()">Sign Out</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">AboutUs</a>
+        </li>
+      </ul>
+    </div>
   </nav>
+
+
+  

@@ -1,14 +1,21 @@
 html{
     height: 100%;
 }
-/* .bg-rg{ */
-    /* background-image: url('assets/background-3126537_1920.jpg'); */
-    /* background-repeat: no-repeat; */
-/* } */
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Courier New', Courier, monospace, "Helvetica Neue", sans-serif; }
 
 .bg-p{
-    background-image: url('assets/background-3126537_1920.jpg');
-    background-repeat: center;
+    background-image: url('assets/ec.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
+
+.bg-rg{
+    background-image: url('assets/regbg2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+

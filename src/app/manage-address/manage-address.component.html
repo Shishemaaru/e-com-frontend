@@ -1,0 +1,66 @@
+<div class="container">
+    <p style="font-family: Canela;" class="display-4 text-center">
+        Manage your address
+    </p>
+    <hr>
+    
+    <mat-card class="mt-5" *ngFor="let add of user.address" style="border-radius: 25px;">
+        <mat-card-content class="body">
+            <p>House : {{add.house}}</p>
+            <p>Landmark : {{add.landmark}}</p>
+            <p>State : {{add.state}}</p>
+            <p>City : {{add.city}}</p>
+            <p>Country : {{add.country}}</p>
+
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="mt-5" style="margin-bottom: 1rem;border-radius: 25px;">
+        <mat-card-content>
+            <p style="font-family: Canela;" class="h1 text-center mt-5">Add new address</p>
+            <hr>
+             
+            <form [formGroup]="addressform" (submit)="userSubmit(addressform.value)">
+                <mat-form-field appearance="outline" style="font-size: small;" class="col-md-10">
+                <mat-label>House Number :</mat-label>
+                <input matInput placeholder="1/134" formControlName="house">
+                <mat-error *ngIf="returnControls().house.errors">House number is Required</mat-error>
+          </mat-form-field>
+            
+            <mat-form-field appearance="outline" style="font-size: small;" class="col-md-10">
+                <mat-label>Landmark :</mat-label>
+                <input matInput placeholder="Munshipulia Chauraha" formControlName="landmark">
+                <mat-error *ngIf="returnControls().landmark.errors">Landmark is Required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" style="font-size: small;" class="col-md-10">
+                <mat-label>City :</mat-label>
+                <input matInput placeholder="Lucknow" formControlName="city">
+                <mat-error *ngIf="returnControls().city.errors">city is Required</mat-error>
+            </mat-form-field>
+
+    
+            <mat-form-field appearance="outline" style="font-size: small;" class="col-md-10">
+                <mat-label>State :</mat-label>
+                <input matInput placeholder="Uttar Pradesh" formControlName="state">
+                <mat-error *ngIf="returnControls().state.errors">State is Required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" style="font-size: small;" class="col-md-10">
+                <mat-label>Country :</mat-label>
+                <input matInput placeholder="India" formControlName="country">
+                <mat-error *ngIf="returnControls().country.errors">country is Required</mat-error>
+            </mat-form-field>
+
+
+            <div class="col-md-10">
+                <button mat-raised-button color="warn" class="ml-auto mt-3">Update Address</button>
+          </div>
+
+        </form>
+
+        </mat-card-content>
+
+    </mat-card>
+
+</div>

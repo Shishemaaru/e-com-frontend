@@ -7,9 +7,9 @@ import { UserService } from '../user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  loggedin=false;
+  loggedin;
 
-  constructor(private userservice: UserService) { }
+  constructor(public userservice: UserService) { }
 
   ngOnInit() {
     let user = JSON.parse(sessionStorage.getItem('user'))

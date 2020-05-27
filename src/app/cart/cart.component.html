@@ -1,0 +1,108 @@
+
+<header class="masthead text-white text-center" style="background:url('assets/homepage/img/nw1.jpeg')no-repeat center center; background-size: cover;background-attachment: fixed;height: 30rem;width: 100%">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9">
+                <div class="text-center">
+                    <h2 id="the"></h2> 
+                </div> 
+             </div>
+         </div>
+     </div>
+</header>
+
+
+          <div class="text-center" style="background-image: url(assets/homepage/img/pattern.png);">
+            <div class="overlay"></div>
+            <div class="container-fluid" style="padding: 9rem;">
+            <div class="row justify-content-center">
+                <div class="col-11">
+                    <div class="card shadow-lg main-card">
+                        <div class="crd"> 
+                            <div class="row">
+                                <div class="col-md-8" style="height: 35rem;">
+                                    <div>
+                                        <h1 class="text-center">Shopping Bag</h1>
+                                        <div class="row text-center vertical-center" style="padding: 2rem;">
+                                            <div class="col-2">
+                                                
+                                            </div>
+                                            <div class="col-3 vertical-center" style="color: rgb(128, 123, 123);">
+                                                <h5>Product</h5>
+                                            </div>
+                                            <div class="col-3 vertical-center" style="color: rgb(128, 123, 123);">
+                                                <h5>Price</h5>
+                                            </div>
+                                            <div class="col-3 vertical-center" style="color: rgb(128, 123, 123);">
+                                                <h5>Quantity</h5>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row text-center vertical-center" style="padding: 1rem;" *ngFor= "let item of cartservice.cartItems; let i= index">
+                                            <div class="col-2">
+                                                <img [src]="'http://localhost:3000/'+item.data.images[0]" class="img-fluid">
+                                            </div>
+                                            <div class="col-3 vertical-center">
+                                                <p class="h5">{{item.data.prodname}}</p>
+                                            </div>
+                                            <div class="col-3 vertical-center">
+                                                <p class="h5">₹.{{item.data.prodprice}}</p>
+                                            </div>
+                                            <div class="col-3 vertical-center">
+                                                <div class="row justify-content-center">
+                                                    <button (click)="addquantity(i)" class="btn btn-outline-dark my-2 my-sm-0" type="submit"> <fa-icon [icon]="plus"></fa-icon> </button>
+                                                    <input class="form-control col-2 text-center" [(ngModel)]="item.quantity" >
+                                                    <button (click)="removequantity(i)" class="btn btn-outline-dark my-2 my-sm-0" type="submit"> <fa-icon [icon]="minus"></fa-icon> </button>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col-2 vertical-center">
+                                                <h3>$ 1200</h3>
+                                            </div> -->
+                                        </div>
+                                        <div class="col-md-4 mt-4">
+                                            <button mat-raised-button color="warn" (click) = "clearcart()">Empty Cart <i class="fa fa-trash" aria-hidden="true"></i> </button>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4 nunnu" style="background-color: rgba(236, 15, 15, 0.699);">
+                                    <button class="btn btn-dark col-md-5 text-center" style="margin-top: 2rem;" (click)="checkout()">Continue Shopping</button>
+
+                                    <mat-card style="margin-top: 3.5rem;"> 
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h5>Sub Total:</h5> </div>
+                                            <div class="col-6">
+                                                <h5>{{sum}}</h5> </div>
+                        
+                                            </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h5>Total:</h5> </div>
+                                            <div class="col-6">
+                                                <h5>{{sum}}</h5> </div>
+                                                </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h5>Shipping</h5> </div>
+                                            <div class="col-6">
+                                                <h5>Free</h5> </div>
+                                            </div>
+                                    </mat-card>
+                                    
+                                    <button class="btn btn-dark col-md-5 text-center" style="margin-top: 3rem;"   (click)="checkout()">Proceed to Pay</button>
+                                    <h1  style="justify-content: center;"><i style="padding-top: 5rem;padding-left:1rem;justify-content: center;color: rgba(136, 63, 63, 0.397); font-size: 6rem;" class="fa fa-shopping-bag" aria-hidden="true"></i></h1>
+                                    
+                                    
+                                    <!-- <h1><i style="padding-top:5rem; padding-left:9rem;justify-content: center;color: rgba(88, 85, 85, 0.397); font-size: 6rem;" class="fa fa-shopping-bag" aria-hidden="true"></i></h1>
+                                    <h1><i style="padding-top:5rem;padding-left: 1rem; justify-content: center;color: rgba(88, 85, 85, 0.397); font-size: 6rem;" class="fa fa-shopping-bag" aria-hidden="true"></i></h1>
+                                    <h1><i style="padding-top:5rem; padding-left:9rem;justify-content: center;color: rgba(88, 85, 85, 0.397); font-size: 6rem;" class="fa fa-shopping-bag" aria-hidden="true"></i></h1> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></div>

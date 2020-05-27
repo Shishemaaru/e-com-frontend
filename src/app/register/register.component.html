@@ -1,4 +1,4 @@
-<div class>
+<div class="container">
     <!-- <mat-card class="mb-2"> -->
           <!-- <mat-card-content class="card-body"> -->
                 <!-- <p class="display-4 text-center">Sign Up</p> -->
@@ -48,6 +48,20 @@
                                         <input matInput placeholder="Rohit@gmail.com" formControlName="email">
                                         <mat-error *ngIf="returnControls().email.errors">Email is Required</mat-error>
                                   </mat-form-field>
+
+                                  <mat-form-field appearance="outline" style="font-size: small;" class="col-md-10">
+                                    <mat-label>Contact</mat-label>
+                                    <input matInput placeholder="9886756***" formControlName="contact">
+                                    <mat-error *ngIf="returnControls().contact.errors">Contact is Required</mat-error>
+                              </mat-form-field>
+
+                              <mat-form-field appearance="outline" style="font-size: small;" class="col-md-10">
+                                    <mat-label>Age</mat-label>
+                                    <input matInput placeholder="25" formControlName="age">
+                                    <mat-error *ngIf="returnControls().age.errors">Age is Required</mat-error>
+                              </mat-form-field>
+
+
 
                                   <div class="col-md-10">
                                         <button mat-raised-button color="warn" class="ml-auto mt-3">Sign Up</button>

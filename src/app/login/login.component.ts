@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
             return;
           }
           else{
-             this.router.navigate(['/home'])
+             this.router.navigate(['/user-dashboard'])
              return;
           }
         }else{

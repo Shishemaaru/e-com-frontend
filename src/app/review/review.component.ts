@@ -41,10 +41,11 @@ export class ReviewComponent implements OnInit {
       return;
     }
     this.reviewForm = this.formbuilder.group({
-      user : this.currentUser._id,
+      // user : this.currentUser._id,
       product : this.product_id,
       rating : 0,
-      review : ''
+      review : '',
+      created : new Date()
     })
   }
 

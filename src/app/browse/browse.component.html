@@ -1,30 +1,105 @@
-<div class="container-fluid mt-5">
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-9">
-            <div class="search-area">
-                
-            </div>
-            <div class="browse-area">
-                <div class="item" *ngFor="let prod of all_products" [routerLink]="['/details', prod._id]" routerLinkActive="router-link-active" > 
-                    <mat-card class="mt-5">
-                        <mat-card-content class="card-body">
-                            <div class="row">
-                                <div class="col-md-6">
-                                <p class="h3">{{prod.prodname}}</p>
-                                <p class="h6 text-muted">in {{prod.prodcat}}</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <img src="http://localhost:3000/{{prod.image}}">
-                                </div>
-                            </div>
-                            
-                            {{prod.prodprice}}
-                            
-                        </mat-card-content>
-                    </mat-card>
-                </div>
-            </div>
+<!-- 
+
+    <div class="jumbotron jumbotron-fluid" >
+      <div class="container">
+          <div class="input-group">
+              <input class="form-control form-control-lg" #query>
+              <div class="input-group-append">
+                  <button class="btn btn-primary btn-lg" (click)="search(query.value)">Search</button>
+              </div>
+          </div>
+
+          <div class="row mt-3 text-center" style="padding-top: 2rem; padding-bottom: 2rem;">
+              <div class="col-md-3">
+                  <button class="btn btn-secondary" (click)="sort()">Sort A - Z</button>
+              </div>
+              <div class="col-md-3">
+                  <button class="btn btn-secondary" (click)="sort(true)">Sort Z - A</button>
+              </div>
+
+              <div class="col-md-3">
+                  <button class="btn btn-secondary" (click)="sortprice()">SortPrice</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+<div class="row" *ngIf="all_products">
+    <div class="col-md-4 " *ngFor="let prod of all_products.slice(start,end)" >
+      <div class="card" style="margin-left: 1rem; margin-right: 1rem;">
+        <div class="imghov">
+          <img class="card__img" src="http://localhost:3000/{{prod.images[0]}}">
+          <div class="overlay text-center ctr"><button style="padding: 1rem;margin-top: 14rem;" class="btn btn-dark" (click)="addtocart(prod)">Add to cart</button></div>
         </div>
-    </div>
+          
+
+
+<div class="card__content" style="background-color: rgba(31, 30, 30, 0.11);">
+  <p class="card__header text-center">{{prod.prodname}}</p>
+  <p class="card__text text-center"> ₹.{{prod.prodprice}} </p>
+   <p class="card__text text-center"> {{prod.prodbrand}} </p>
+  <button class="card__btn" [routerLink]="['/details', prod._id]" routerLinkActive="router-link-active">Explore ></button>
+ </div>
+</div>
+</div>
+
+
+</div>
+
+
+<div class="row justify-content-center" >
+  <button color="primary" (click)="prev()" mat-stroked-button><fa-icon [icon]="Left"></fa-icon></button>
+  <button color="primary" mat-button>{{start+1}} - {{end}} of {{all_products.len}}</button>
+  <button color="primary" (click)="next(all_products)" mat-stroked-button><fa-icon [icon]="Right"></fa-icon></button>
+</div>
+ -->
+
+ <header class="masthead text-white text-center header-mg" >
+  <div class="container">
+      <h1 class="text-center">Tech-Buy</h1>
+      <div class="input-group">
+          <input class="form-control form-control-lg justify-content-center" #query>
+              <div class="input-group-append">
+                  <button mat-flat-button color="warn" class="btn btn-lg" (click)="search(query.value)">Search</button>
+              </div>
+      </div>
+
+      <div class="row mt-3 text-center">
+          <div class="col-md-3">
+              <button class="btn btn-secondary" (click)="sort()">Sort A - Z</button>
+          </div>
+          <div class="col-md-3">
+              <button class="btn btn-secondary" (click)="sort(true)">Sort Z - A</button>
+          </div>
+
+          <div class="col-md-3">
+              <button class="btn btn-secondary" (click)="sortprice()">SortPrice</button>
+          </div>
+      </div>
+  </div>
+</header>
+
+
+
+<div class="row mt-5" style="margin-top: 1rem;">
+    <div class="col-md-4 " *ngFor="let prod of all_products" >
+      <div class="card" style="margin-left: 1rem; margin-right: 1rem;">
+        <div class="imghov">
+          <img class="card__img" src="http://localhost:3000/{{prod.images[0]}}">
+          <div class="overlay text-center ctr"><button style="padding: 1rem;margin-top: 14rem;" class="btn btn-dark" (click)="addtocart(prod)">Add to cart</button></div>
+        </div>
+          
+
+
+<div class="card__content" style="background-color: rgba(31, 30, 30, 0.11);">
+  <p class="card__header text-center">{{prod.prodname}}</p>
+  <p class="card__text text-center"> ₹.{{prod.prodprice}} </p>
+   <p class="card__text text-center"> {{prod.prodbrand}} </p>
+  <button class="card__btn" [routerLink]="['/details', prod._id]" routerLinkActive="router-link-active">Explore ></button>
+ </div>
+</div>
+</div>
+
+
 </div>

@@ -28,7 +28,7 @@ export class AuthService {
         console.log('wrong password');
         return;
       }
-      console.log('user not exists');
+      console.log('user does not exist');
       return;
     })
   }
