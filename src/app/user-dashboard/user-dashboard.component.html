@@ -15,9 +15,9 @@
             <div class="row justify-content-center">
                 <div class="col-11">
                   
-                    <mat-card class="col-md-11" *ngIf="showuserdetails" style="border-radius: 30px;"> 
+                    <mat-card class="col-md-11" *ngIf="showuserdetails" style="border-radius: 30px;" > 
                        
-                        <p style="font-family: Canela;" class="display-4">Personal Details</p>
+                        <p style="font-family: Canela;" class="display-4 text-center">Personal Details</p>
                         <hr>
     
                         
@@ -58,7 +58,7 @@
                     </mat-card>
 
                     <app-manage-address *ngIf="showmanageaddress"></app-manage-address>
-                    <app-ordermanager *ngIf="showorders"></app-ordermanager>
+                    <app-userorders *ngIf="showorders"></app-userorders>
                 
                 </div>
             </div>

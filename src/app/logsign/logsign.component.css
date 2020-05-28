@@ -225,16 +225,6 @@
     text-transform: uppercase;
   }
   
-  /* input {
-    display: block;
-    width: 100%;
-    margin-top: 5px;
-    padding-bottom: 5px;
-    font-size: 16px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-    text-align: center;
-  } */
-  
   .forgot-pass {
     margin-top: 15px;
     text-align: center;
